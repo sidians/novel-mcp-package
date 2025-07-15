@@ -169,3 +169,16 @@ novel_mcp/
 
 **Novel MCP** - 让AI创作更智能，让故事更连贯！
 
+---
+### ModelScope 一键部署配置
+```yaml
+service:
+  name: novel-mcp
+  image: python:3.11-slim
+  port: 5000
+  command: |
+    pip install -r requirements.txt &&
+    python src/main.py
+  env:
+    GEMINI_API_KEY: ${MODELSCOPE_API_KEY}
+
